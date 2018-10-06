@@ -6,6 +6,7 @@ void setup() {
   // put your setup code here, to run once:
   // setup the sensors and their pin numbers
   
+  Serial.begin(9600);
   // EX: pinMode(var1, output)
 }
 
