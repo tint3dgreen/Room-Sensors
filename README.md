@@ -12,3 +12,5 @@ Required stuff
 ==============
 
 get Follow Johnny-Five instructions from https://github.com/rwaldron/johnny-five/wiki/Getting-Started
+
+Also Uses D3
