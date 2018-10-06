@@ -11,4 +11,4 @@ Communicate Data to Admin
 Required stuff
 ==============
 
-get Follow Johnny-Five instructions from http://johnny-five.io/
+get Follow Johnny-Five instructions from https://github.com/rwaldron/johnny-five/wiki/Getting-Started
