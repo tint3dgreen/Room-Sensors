@@ -6729,6 +6729,7 @@
     }
   ],
   "dependencies": {
-    "johnny-five": "^1.0.0"
+    "johnny-five": "^1.0.0",
+    "nodebots-hcsr04": "git+https://github.com/ajfisher/nodebots-hcsr04.git"
   }
 }
