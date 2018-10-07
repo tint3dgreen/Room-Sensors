@@ -20,11 +20,9 @@ board.on("ready", function() {
 
   proximity.on("data", function() {
     console.log("inches: ", this.inches);
-    console.log("cm: ", this.cm);
   });
 
 
-/*
 
   button_in.on("press", function() {
     //console.log( "In Button pressed" );
@@ -107,5 +105,5 @@ this.loop(50, function(){
 })
 	
 
-*/
+
 });
