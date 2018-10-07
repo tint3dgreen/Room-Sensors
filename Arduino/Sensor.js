@@ -7,28 +7,10 @@ board.on("ready", function() {
   var inb_press = false;
   var outb_press = false;
   var state = 0;
-  var motion = new five.Motion(7);
-  var led = new five.Led(13);
   var button_in = new five.Button(2);
   var button_out = new five.Button(3);
   // "calibrated" occurs once, at the beginning of a session,
 
-
-/*
-  motion.on("calibrated", function() {
-    console.log("calibrated");
-  });
-
-  motion.on("motionstart", function() {
-    console.log("motionstart");
-    led.on();
-  });
-
-  motion.on("motionend", function() {
-  	led.off();
-    console.log("motionend");
-  });
-*/
   button_in.on("press", function() {
     //console.log( "In Button pressed" );
     inb_press = true;
