@@ -1,6 +1,7 @@
 var five = require("johnny-five");
 var board = new five.Board();
 var http = require('http');
+var fs = require('fs');
 
 //Assume that only one person goes through the doorway at a time. Only big enough for one person
 //Other people could follow
@@ -147,12 +148,20 @@ board.on("ready", function() {
 //Every amount of time send data as a json file
 //make an http object that will look for things at a port
 //Message will contain data in a format
-	http.createServer(function(req, res){
-		res.setHeader('Content-Type','text-html');
-		res.writeHead(200, {'Content-Type': 'object'});
-		val = JSON.stringify(data);
-		res.write(val);
-		res.end();
-	}).listen(8080);
+	// http.createServer(function(req, res){
+	// 	res.setHeader('Content-Type','text-html');
+	// 	res.writeHead(200, {'Content-Type': 'object'});
+	// 	val = JSON.stringify(data);
+	// 	res.write(val);
+	// 	res.end();
+	// }).listen(8080);
+	var send = setInterval(upload,10000);
 
+	function upload(){
+		fs.writeFile('data.json', JSON.stringify(data), function (err) {
+  		if (err) throw err;
+  		console.log('Fil Saved');
+	})
+
+};
 });
