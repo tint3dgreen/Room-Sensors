@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script src='jquery-3.3.1.min.js'></script>
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<script>
+function loadDoc(){
+	$.getJSON( "C:\Users\carsc\Documents\GitHub\Room-Sensors\Arduino\data.json", function( data ) {
+		document.getElementById('b1').innerText = data.stand
+});
+}
+</script>
+<button type="button" onclick="loadDoc()" id='b1'>Change Content</button>
+</div>
+
+
+</head>
+</body>
+</html>
