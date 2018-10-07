@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<body>
-<head>
-<script src='jquery-3.3.1.min.js'></script>
-<div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<script>
-function loadDoc(){
-	$.getJSON( "C:\Users\carsc\Documents\GitHub\Room-Sensors\Arduino\data.json", function( data ) {
-		document.getElementById('b1').innerText = data.stand
-});
-}
-</script>
-<button type="button" onclick="loadDoc()" id='b1'>Change Content</button>
-</div>
+    <head>
+        <script type="text/javascript" src="data.json"></script>
+             <script type="text/javascript" >
+                function load() {
+                     var mydata = JSON.parse(data);
 
+                     var div = document.getElementById('data');
 
-</head>
-</body>
+                        div.innerHTML = div.innerHTML + "<p class='inner' id="+0+">" + "Total People Entered: " + mydata[0].people_in +"</p>" + "<br>";
+
+                        div.innerHTML = div.innerHTML + "<p class='inner' id="+1+">" + "Total People Who Exited: " + mydata[1].people_out +"</p>" + "<br>";
+
+                        div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+">" + "Current Room Occupancy: " + mydata[2].people_count +"</p>" + "<br>";
+                     
+                 }
+        </script>
+    </head>
+    <body onload="load()">
+    <div id= "data">
+
+    </div>
+    </body>
 </html>

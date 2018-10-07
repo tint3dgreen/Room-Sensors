@@ -158,7 +158,8 @@ board.on("ready", function() {
 	var send = setInterval(upload,10000);
 
 	function upload(){
-		fs.writeFile('data.json', JSON.stringify(data), function (err) {
+		fdata = [{'people_in':data.people_in},{'people_out':data.people_out},{'people_count':data.people_count}]
+		fs.writeFile('data.json', "data = '"+JSON.stringify(fdata)+"'", function (err) {
   		if (err) throw err;
   		console.log('File Saved');
 	})
