@@ -1,5 +1,7 @@
 var five = require("johnny-five");
 var board = new five.Board();
+var http = require('http');
+
 
 board.on("ready", function() {
 
@@ -108,5 +110,12 @@ this.loop(50, function(){
 //Every amount of time send data as a json file
 //make an http object that will look for things at a port
 //Message will contain data in a format
+	http.createServer(function(req, res){
+		res.setHeader('Content-Type','text-html');
+		res.writeHead(200, {'Content-Type': 'object'});
+		val = JSON.stringify(data);
+		res.write(val);
+		res.end();
+	})
 
-});
+}).listen(8080);
