@@ -160,7 +160,7 @@ board.on("ready", function() {
 	function upload(){
 		fs.writeFile('data.json', JSON.stringify(data), function (err) {
   		if (err) throw err;
-  		console.log('Fil Saved');
+  		console.log('File Saved');
 	})
 
 };
