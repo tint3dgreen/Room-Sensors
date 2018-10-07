@@ -11,6 +11,21 @@ board.on("ready", function() {
   var button_out = new five.Button(3);
   // "calibrated" occurs once, at the beginning of a session,
 
+
+
+  var proximity = new five.Proximity({
+    controller: "HCSR04",
+    pin: "D7"
+  });
+
+  proximity.on("data", function() {
+    console.log("inches: ", this.inches);
+    console.log("cm: ", this.cm);
+  });
+
+
+/*
+
   button_in.on("press", function() {
     //console.log( "In Button pressed" );
     inb_press = true;
@@ -92,5 +107,5 @@ this.loop(50, function(){
 })
 	
 
-
+*/
 });
