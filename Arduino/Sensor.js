@@ -3,7 +3,7 @@ var board = new five.Board();
 
 board.on("ready", function() {
 
-  var people_count = 0;
+  var data = {people_in:"0",people_out:"0",people_count:"0"}
   var inb_press = false;
   var outb_press = false;
   var state = 0;
@@ -19,7 +19,7 @@ board.on("ready", function() {
   });
 
   proximity.on("data", function() {
-    console.log("inches: ", this.inches);
+    //console.log("inches: ", this.inches);
   });
 
 
@@ -54,7 +54,6 @@ board.on("ready", function() {
   });
 
 
-console.log( "Switch Began" );
 this.loop(50, function(){
 	switch(state){
 		case 0: 						//Case if no button is pressed
@@ -86,8 +85,9 @@ this.loop(50, function(){
 			if (outb_press == false){
 				state = 1;
 			}else if (inb_press == false){
-				people_count -= 1;
-				console.log(people_count);
+				data.people_count -= 1;
+				data.people_out += 1;
+				console.log(data.people_count);
 				state = 2;
 			}
 			break;
@@ -96,14 +96,17 @@ this.loop(50, function(){
 			if(inb_press == false){
 				state = 2;
 			}else if (outb_press == false){
-				people_count += 1;
-				console.log(people_count);
+				data.people_count += 1;
+				data.people_in += 1;
+				console.log(data.people_count);
 				state = 1;
 			}
 			break;
 	}
 })
-	
 
+//Every amount of time send data as a json file
+//make an http object that will look for things at a port
+//Message will contain data in a format
 
 });
