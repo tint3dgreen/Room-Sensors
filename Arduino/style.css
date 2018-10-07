@@ -6,7 +6,7 @@ body {
 
 }
 input[Type = text]{
-	background-color: #b72d14;
+	background-color: #000000;
 
 }
 #data {
@@ -15,7 +15,4 @@ input[Type = text]{
 	font-size: 120px;
 	margin: 12% 25% 5% 25%;
 	text-align: center;
-}
-#side {
-	float: left;
 }

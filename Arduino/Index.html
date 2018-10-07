@@ -4,29 +4,26 @@
     	<meta http-equiv="refresh" content="5.3">
     	<link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="data.json"></script>
+        <script type="text/javascript" src="config.json"></script>
              <script type="text/javascript" >
                 function load() {
                      var mydata = JSON.parse(data);
+                     var myconfig = JSON.parse(config);
 
                      var div = document.getElementById('data');
-                     var side = document.getElementById('side')
+                     var side = document.getElementById('side');
 
-                        side.innerHTML = side.innerHTML + "<p class='inner' id="+0+">" + "Total People Entered: " + mydata[0].people_in +"</p>";
+                        div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+">" + mydata[2].people_count + "/" + myconfig[0].Max + "</p>";
 
-                        side.innerHTML = side.innerHTML + "<p class='inner' id="+1+">" + "Total People Who Exited: " + mydata[1].people_out +"</p>";
-
-                        div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+">" + mydata[2].people_count + "/20</p>";
-
-                        if(mydata[2].people_count < 20){
+                        if(mydata[2].people_count < myconfig[0].Max){
                         	div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+" style='font-size: 60px'>" + "Welcome!";
                         }
                         else{
                         	div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+" style='font-size: 60px'>" + "Filled to Occupancy: Please come back Later";
                         }
 
-                        
+                        div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+" style='font-size: 20px'>" + myconfig[1].memo
 
-                        side.innerHTML = side.innerHTML  + "<p class='inner' id="+2+">" + "Current Room Occupancy: " + mydata[2].people_count +"</p>";
                      
                  }
         </script>

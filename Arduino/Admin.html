@@ -6,6 +6,16 @@
 		<script type="text/javascript" src="config.json"></script>
 		<script type="text/javascript" src="requireJS.js"></script>
 		<script type="text/javascript">
+			function onLoad(){
+				var mydata = JSON.parse(data);
+                var myconfig = JSON.parse(config);
+
+                var side = document.getElementById('side');
+
+                side.innerHTML = side.innerHTML + "<p class='inner' id="+0+">" + "Total People Entered: " + mydata[0].people_in +"</p>";
+
+        		side.innerHTML = side.innerHTML + "<p class='inner' id="+1+">" + "Total People Who Exited: " + mydata[1].people_out +"</p>";
+			}
 			function clickFunc(){
 				var high = document.getElementById('o').value;
 				var message = document.getElementById('memo').value;
@@ -16,12 +26,18 @@
 		</script>
 	<a id="downloadAnchorElem" style="display:none"></a>
 	</head>
-	<body id = 'a'>
+	<body id = 'a' onload="onLoad()">
+		<div id="side">
+		</div>
+		<div id="data">
+		<image id="pic" src=graph.png></image>
+		</div>
 		<div id="title">Settings</div>
 		<form action = "http://66.71.86.132:8081/process_get" method = "GET">
-         Maximum Occupancy: <input type = "text" name = "max">  <br>
-         Memo: <input type = "text" name = "message">
+         Maximum Occupancy: <input type = "text" id = "smol" name = "max">  <br>
+         Memo: <input type = "text" id = "larg" name = "message">
          <input type = "submit" value = "Submit">
+
       </form>
 	</body>
 </html>
