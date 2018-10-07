@@ -157,6 +157,9 @@ board.on("ready", function() {
 	// }).listen(8080);
 	var send = setInterval(upload,10000);
 
+	var express = require('express');
+
+
 	function upload(){
 		fdata = [{'people_in':data.people_in},{'people_out':data.people_out},{'people_count':data.people_count}]
 		fs.writeFile('data.json', "data = '"+JSON.stringify(fdata)+"'", function (err) {

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+    	<meta http-equiv="refresh" content="5.3">
+    	<link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="data.json"></script>
+             <script type="text/javascript" >
+                function load() {
+                     var mydata = JSON.parse(data);
+
+                     var div = document.getElementById('data');
+                     var side = document.getElementById('side')
+
+                        side.innerHTML = side.innerHTML + "<p class='inner' id="+0+">" + "Total People Entered: " + mydata[0].people_in +"</p>";
+
+                        side.innerHTML = side.innerHTML + "<p class='inner' id="+1+">" + "Total People Who Exited: " + mydata[1].people_out +"</p>";
+
+                        div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+">" + mydata[2].people_count + "/20</p>";
+
+                        if(mydata[2].people_count < 20){
+                        	div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+" style='font-size: 60px'>" + "Welcome!";
+                        }
+                        else{
+                        	div.innerHTML = div.innerHTML  + "<p class='inner' id="+2+" style='font-size: 60px'>" + "Filled to Occupancy: Please come back Later";
+                        }
+
+                        
+
+                        side.innerHTML = side.innerHTML  + "<p class='inner' id="+2+">" + "Current Room Occupancy: " + mydata[2].people_count +"</p>";
+                     
+                 }
+        </script>
+    </head>
+    <body onload="load()">
+    <div id= "data">
+
+    </div>
+    </body>
+    <div id="side">
+    </div>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styleA.css">
+		<script type="text/javascript" src="data.json"></script>
+		<script type="text/javascript" src="config.json"></script>
+		<script type="text/javascript" src="requireJS.js"></script>
+		<script type="text/javascript">
+			function clickFunc(){
+				var high = document.getElementById('o').value;
+				var message = document.getElementById('memo').value;
+				config = [{'max':high},{'memo':message}]
+				
+				// config.json = 'config = "' + JSON.stringify(config) + '"'
+			}
+		</script>
+	<a id="downloadAnchorElem" style="display:none"></a>
+	</head>
+	<body id = 'a'>
+		<div id="title">Settings</div>
+		<form> Set Maximum Occupancy <input tpye="text" id="o"><br></form> 
+		Memo Field<input type="te" id="memo">
+		</form>
+		<button type="button" onclick="clickFunc()">Apply</button>
+	</body>
+</html>

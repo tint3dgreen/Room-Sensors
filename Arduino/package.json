@@ -6729,7 +6729,18 @@
     }
   ],
   "dependencies": {
+    "express": "^4.16.3",
     "johnny-five": "^1.0.0",
     "nodebots-hcsr04": "git+https://github.com/ajfisher/nodebots-hcsr04.git"
-  }
+  },
+  "name": "arduino",
+  "version": "1.0.0",
+  "main": "Sensor.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

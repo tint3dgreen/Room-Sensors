@@ -1,0 +1,21 @@
+body {
+	background-color:#e88f29;
+	background-image: url('background.jpg');
+	
+
+
+}
+input[Type = text]{
+	background-color: #b72d14;
+
+}
+#data {
+	width: 50%;
+	height: 75%;
+	font-size: 120px;
+	margin: 12% 25% 5% 25%;
+	text-align: center;
+}
+#side {
+	float: left;
+}
