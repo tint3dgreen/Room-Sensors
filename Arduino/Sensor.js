@@ -158,6 +158,36 @@ board.on("ready", function() {
 	var send = setInterval(upload,10000);
 
 	var express = require('express');
+	var app = express();
+
+	app.use(express.static('public'));
+	app.get('/index.htm', function (req, res) {
+   		res.sendFile( __dirname + "/" + "index.html" );
+	})
+
+	app.get('/process_get', function (req, res) {
+   		// Prepare output in JSON format
+   		response = [{
+      		Max:req.query.max},
+      		{memo:req.query.message
+   		}];
+   		upload = "config = '" + JSON.stringify(response) + "'";
+   		fs.writeFile('config.json',upload,function(err){
+   			if (err) throw err;
+   			console.log("config Updated")
+   		})
+   		res.end('Settings successuflly updated, Please return to the previous page');
+	})
+
+	var server = app.listen(8081, function () {
+   		var host = server.address().address
+   		var port = server.address().port
+   		console.log("Example app listening at http://%s:%s", host, port)
+
+	})
+
+
+	config = [{"max":10},{"memo":"Please Enjoy Your Stay!"}]
 
 
 	function upload(){

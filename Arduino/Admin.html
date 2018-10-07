@@ -18,9 +18,10 @@
 	</head>
 	<body id = 'a'>
 		<div id="title">Settings</div>
-		<form> Set Maximum Occupancy <input tpye="text" id="o"><br></form> 
-		Memo Field<input type="te" id="memo">
-		</form>
-		<button type="button" onclick="clickFunc()">Apply</button>
+		<form action = "http://66.71.86.132:8081/process_get" method = "GET">
+         Maximum Occupancy: <input type = "text" name = "max">  <br>
+         Memo: <input type = "text" name = "message">
+         <input type = "submit" value = "Submit">
+      </form>
 	</body>
 </html>
